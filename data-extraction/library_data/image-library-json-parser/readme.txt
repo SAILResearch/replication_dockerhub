@@ -1,0 +1,1 @@
+This script parses the json dumped by the snyk-docker-analyzer and extract the libraries, their version, and how they are installed.

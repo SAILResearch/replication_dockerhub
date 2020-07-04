@@ -1,22 +1,20 @@
 ﻿# Data Collection and Extraction
 
-*All of these data extraction scripts are located in Data-extraction folder.
+___All of these data extraction scripts are located in Data-extraction folder.
 
-1. Run the image-library-extractor java program extracts the libraries for a set of images that should be stored in a csv file.
-2. Collect all the extracted libraries json files and put it in a directory and specify the directory in the program container-diff-json-parser which is a C# application and convert the json file into a csv file containing the image and corresponding library information. Note: this program will only work on Windows with .net framework installed.
-3. Use the extracted_library_formatter.r script to extract the target fields and combine it to the previously collected data. It will output a csv file containing all the extracted image library data.
-4. Use required_software_installed_or_not.R script to validate the extracted libraries from step 3 . It will extract only the images that contain the target software system.
-
+1. Run the library-data/image-library-extractor java program extracts the libraries for a set of images that should be stored in a csv file.
+2. Collect all the extracted libraries json files and put it in a directory and specify the directory in the program library_data/image-library-json-parser which is a C# application and converts the json files into a csv file containing the image and corresponding library information. Note: this program will only work on Windows with .net framework installed.
+3. Use required_software_installed_or_not.R script to validate the extracted libraries from step 2. It will extract only the images that contain the target software system.
 
 Executing the above mentioned steps will give the images which installs the target software system by either apt, apk, or rpm package manager along with their installed libraries.
 
 
 # Research Questions
 
+___For answering the research question you need to open the dockerhub-images-paper.Rproj R project inside the r-scripts folder.
 
 PQs. Manually and automatically installed libraries: 
 Run the script manually_vs_automatically_installed_libraries.R  which takes the extracted libraries for images from our data collected step 5 and outputs the boxplot and prints a summary of the automatically and manually installed libraries.
-
 
 
 RQ1: Differences among Docker images’ libraries: Execute the R script named shared_libs_graph_non-versioned.R which compares images based on their installed libraries and outputs the similarity percentage. The shared_libs_graph_versioned.R does the same comparison, however, it considers the versions of the libraries. Both of these scripts takes the extracted libraries for images generated in 5 in the data collection. To compare the images similarly between the official and community images, run the scripts: official_shared_libs_percentage-versioned.R & official_shared_libs_percentage-non-versioned.R. 

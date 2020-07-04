@@ -36,4 +36,4 @@ Run security_analysis_official_community.R to compare the security vulnerabiliti
 
 # Discussion
 
-Run the the scripts in the r-scripts/Discussion folder to collect the analyzed data for discussion. Also collect the vulnerability and resource efficiency wilcoxon and spearman test results from the corresponding scripts of resource efficiency, and vulnerability.
+Run the the scripts in the r-scripts/Discussion folder to collect the analyzed data for discussion. Also collect the vulnerability and resource efficiency spearman test results from the corresponding scripts of resource efficiency, and vulnerability.

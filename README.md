@@ -23,7 +23,7 @@ RQ1: Differences among Docker images’ libraries: Execute the R script named sh
 Calculating the number of lib difference from the official image: Run the script number_of_diff_from_official_image_versioned.R & number_of_diff_from_official_image_non_versioned.R which take the library information csv file extracted from step 3 and outputs the boxplots along with their summaries.
 
 
-Identifying the cluster of images that have the same set of libraries: Run number_of_cluster_versioned.R and number_of_clusters_non_versioned.R to find out the number of clusters that images have based on their installed libraries.
+Identifying the cluster of images that have the same set of libraries: Run number_of_cluster.R to find out the number of clusters images have based on their installed libraries.
 
 
 RQ2: Container efficiency: Run the container-efficiency-measure Java program to extract the efficiency information of the images located at Data-extraction\efficiency_data\container-efficiency-measure. It takes the names of the images in a csv file which needs to be evaluated and outputs the efficiency results in text files which need to format by the efficiency-file-parser Java program located at Data-extraction\efficiency_data\efficiency-file-parser. This program outputs the result into a csv format containing the efficiency, wasted bytes data for each image. Using this extracted data run the efficiency_image_analyzer.R which does all the experiments and plot graphs.
@@ -32,7 +32,9 @@ RQ3: Security analysis: We refer to ConPan [MSR 2019] to extract the vulnerabili
 
 Run the vulnerability_analysis.R which takes the generated csv file and the image metric data (e.g., number of pulls and stars). It outputs the number of vulnerabilities in each image in a csv file. It also does the correlation analysis between the popularity and security vulnerabilities.
 
-Run security_analysis_official_community.R to compare the security vulnerabilities of official and community images. 
+Run security_analysis_official_community.R to compare the security vulnerabilities of official and community images.
+
+vulnerability_names_official_vs_community.R generates the common vulberabilities exposed across different images and different OS distributions.
 
 # Discussion
 

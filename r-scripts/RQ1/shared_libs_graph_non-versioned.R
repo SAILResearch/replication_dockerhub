@@ -66,17 +66,7 @@ for (f in 1:length(oses)) {
       all_similarity_percentage = rbind(all_similarity_percentage, shared_lib_percentage)
       
     }
-    
-   # ggplot(
-    #   all_similarity_percentage,
-    #  aes(x = shared_percentage, y = image_percentage, colour = type)
-    #) +
-    #  geom_line() +
-    #  xlab(label = "% of shared libraries") +
-    #  ylab("% of image")
-    
-    
-    
+       
     formatted_data = cast(all_similarity_percentage, shared_percentage ~ type, value = 'image_percentage')
     formatted_data[is.na(formatted_data)] = 0
     formatted_data = formatted_data[order(-formatted_data$shared_percentage), ]
